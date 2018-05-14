@@ -51,6 +51,8 @@ body{
 
 .brain img{
   position: absolute;
+  /* transform: scale(0.5); */
+
   /* animation:tap 1s  infinite; */
 }
 

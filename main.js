@@ -16,6 +16,13 @@ import b12 from './img/12.png'
 
 
 class Example extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        top: 0,
+        y:null,
+      };
+  }
   componentDidMount() {
     $('.brain img').click(function(){
       $(this).toggleClass('bdown') //.delay(1000).toggleClass('bdown')
@@ -23,14 +30,30 @@ class Example extends React.Component {
         $(this).toggleClass('bdown')
       }, 400);
     })
+    $('.brain img').each(function(){
+      let w = this.naturalWidth;
+      let h = this.naturalHeight;
+      $(this).width(w/980*100+'vw')
+    })
   }
+  touchstart(e){
+    var y = e.targetTouches[0].pageY; //touches数组对象获得屏幕上所有的touch，取第一个touch
+    this.setState({y})
+  }
+  touchmove(e){
+    var top = this.state.top - (e.targetTouches[0].pageY-this.state.y)/5
+    this.setState({top})
+
+  }
+
   render() {
+    const {top} = this.state;
     return (
-      <div className={'warp'}>
+      <div className={'warp'} onTouchStart={this.touchstart.bind(this)}  onTouchMove={this.touchmove.bind(this)}>
       {
          <div className={'bg'} />
       }
-      <div className={'brain'}>
+      <div className={'brain'} style={{top}} >
        <img className={'b1'} src={b1}/>
        <img className={'b2'} src={b2}/>
        <img className={'b3'} src={b3}/>
