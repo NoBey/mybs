@@ -31,7 +31,7 @@ export default  class Music extends React.Component {
       let p = Math.ceil(Math.random()*4)-1
       console.log(p)
       l.push(
-        <img key={'music' + i} className={'mm'} src={imglist[p]} style={{animation: `mm ${time}ms infinite`}} />
+        <img key={'music' + i} className={'mm'} src={imglist[p]} style={{animation: `mm${1+p} ${time}ms infinite`}} />
       )
     }
     return l

@@ -13,17 +13,23 @@ export default  class Lamp extends React.Component {
       };
   }
   componentDidMount() {
-
+    $('.lamp').css({marginTop: '-20vh'})
+    $('.lamp').animate({marginTop: '0'})
+    $('.xian').css({marginTop: '-60vh'})
+    $('.xian').animate({marginTop: '0'})
   }
 
   render() {
     const ok = this.state.ok
     return (
-      <div className={'lampwarp'} {...this.props}>
+      <div className={'lampwarp'} {...this.props} >
       {
-        ok ? <img className={'lamp '} style={{width: '100vw'}} src={lamp} /> : <img className={'lamp '} style={{width: '24vw',position:'absolute',marginLeft: '38vw'}} src={lamp2} />
+        ok ? <img className={'lamp'} style={{width: '100vw'}} src={lamp} /> : <img className={'lamp '} style={{width: '24vw',position:'absolute',marginLeft: '38vw'}} src={lamp2} />
       }
-      <img className={'down xian'} src={xian} onClick={() => this.setState({ok: !ok}) } />
+      <img className={'down xian'} src={xian} onClick={(e) => {
+        e.stopPropagation()
+        this.setState({ok: !ok})
+      } } />
 
       </div>
     );

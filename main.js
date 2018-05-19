@@ -64,6 +64,16 @@ class Example extends React.Component {
   sports(){
     this.setState({sports: true})
   }
+  back(e){
+    this.setState({
+      lamp: false,
+      music: false,
+      sports: false
+    })
+    e.stopPropagation()
+
+
+  }
 
   render() {
     const {top, lamp, music, sports} = this.state;
@@ -73,22 +83,22 @@ class Example extends React.Component {
       })}>
        <div className={'bg'} />
       <div className={'brain'} style={{top}} onClick={(e) => e.stopPropagation()} >
-       <img className={'b1'} onClick={this.lamp.bind(this)} src={b1}/>
+       <img className={'b1'}  src={b1}/>
        <img className={'b2'} src={b2}/>
-       <img className={'b3'} src={b3}/>
-       <img className={'b4'} onClick={this.music.bind(this)} src={b4}/>
+       <img className={'b3'} onClick={this.lamp.bind(this)} src={b3}/>
+       <img className={'b4'} onClick={this.sports.bind(this)} src={b4}/>
        <img className={'b5'} src={b5}/>
        <img className={'b6'} src={b6}/>
        <img className={'b7'} src={b7}/>
-       <img className={'b8'} onClick={this.sports.bind(this)} src={b8}/>
+       <img className={'b8'} onClick={this.music.bind(this)} src={b8}/>
        <img className={'b9'} src={b9}/>
        <img className={'b10'} src={b10}/>
        <img className={'b11'} src={b11}/>
        <img className={'b12'} src={b12}/>
       </div>
-      {lamp ? <Lamp onClick={(e) => e.stopPropagation()}  /> : ''}
-      {music ? <Music onClick={(e) => e.stopPropagation()}  /> : ''}
-      {sports ? <Sports onClick={(e) => e.stopPropagation()}  /> : ''}
+      {lamp ? <Lamp  onClick={this.back.bind(this)}  /> : ''}
+      {music ? <Music  onClick={this.back.bind(this)} /> : ''}
+      {sports ? <Sports onClick={this.back.bind(this)}  /> : ''}
       </div>
     );
   }

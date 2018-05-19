@@ -13,8 +13,69 @@
   transform-origin: 50% 0
 }
 }
+@keyframes music2
+{
+0% {
+  transform: rotate(0deg);
+}
+50% {
+  transform: rotate(360deg);
+}
+100% {
+  transform: rotate(720deg);
+}
+}
+@keyframes music2a
+{
+0% {
+  left: -30vw;
+}
+100% {
+  left: 34vw;
+}
+}
 
-@keyframes mm
+@keyframes music1
+{
+0% {
+  transform: rotate(0deg) scale(2,2) ;
+  opacity: 0;
+}
+100% {
+  transform: rotate(720deg) scale(1,1) ;
+  opacity: 1;
+}
+}
+
+
+@keyframes mm1
+{
+0% {
+  transform: rotate(30deg);
+  top: 70vh;
+  left: 55vw;
+
+}
+25% {
+  transform: rotate(0deg);
+  top: 55vh;
+  left: 85vw;
+
+}
+50% {
+  transform: rotate(-30deg);
+  top: 35vh;
+  left: 65vw;
+}
+100% {
+  transform: rotate(30deg);
+  top: 0vh;
+  left: 85vw;
+}
+}
+
+
+@keyframes mm2
 {
 0% {
   transform: rotate(30deg);
@@ -37,10 +98,60 @@
   transform: rotate(30deg);
   top: 0vh;
   left: 55vw;
-
 }
 }
 
+@keyframes mm3
+{
+0% {
+  transform: rotate(30deg);
+  top: 70vh;
+  left: 55vw;
+
+}
+25% {
+  transform: rotate(0deg);
+  top: 60vh;
+  left: 50vw;
+
+}
+50% {
+  transform: rotate(-30deg);
+  top: 40vh;
+  left: 70vw;
+}
+100% {
+  transform: rotate(30deg);
+  top: 0vh;
+  left: 70vw;
+}
+}
+
+@keyframes mm4
+{
+0% {
+  transform: rotate(30deg);
+  top: 70vh;
+  left: 55vw;
+
+}
+25% {
+  transform: rotate(0deg);
+  top: 60vh;
+  left: 50vw;
+
+}
+50% {
+  transform: rotate(-30deg);
+  top: 40vh;
+  left: 70vw;
+}
+100% {
+  transform: rotate(30deg);
+  top: 0vh;
+  left: 70vw;
+}
+}
 
 .musicwarp{
   width: 100vw;
@@ -60,13 +171,17 @@
   width: 40vw;
   position: absolute;
   top: 60vh;
+  animation: music1 2s  linear;
+
 }
 .music2{
   width: 24vw;
   position: absolute;
   top: 62vh;
   left: 34vw;
+  animation:music2a 2s,  music2 1s infinite linear;
 }
+
 .music3{
   width: 16vw;
   position: absolute;
@@ -79,5 +194,5 @@
   position: absolute;
   top: 70vh;
   left: 55vw;
-  animation: mm 5s infinite;
+  animation: mm2 5s infinite ease;
 }

@@ -11,6 +11,41 @@
 }
 }
 
+@keyframes foot1
+{
+0% {
+  top: 120vw;
+  left: 60vw;
+}
+50% {
+  /* transform: rotate(360deg); */
+  top: 117vw;
+  left: 52vw;
+
+}
+100% {
+  top: 122vw;
+  left: 38vw;
+}
+}
+
+@keyframes foot2
+{
+0% {
+  top: 122vw;
+  left: 38vw;
+}
+50% {
+  /* transform: rotate(360deg); */
+  top: 125vw;
+  left: 52vw;
+
+}
+100% {
+  top: 120vw;
+  left: 60vw;
+}
+}
 
 
 
@@ -48,5 +83,27 @@
   top: 140vw;
   left: 64vw;
   animation: sp 2s infinite linear;
+}
 
+.sp4{
+  width: 16vw;
+  position: absolute;
+  top: 120vw;
+  left: 60vw;
+  animation: foot1 1s infinite linear,foot2 1s infinite linear;
+
+}
+.sp5{
+  width: 16vw;
+  position: absolute;
+  top: 122vw;
+  left: 38vw;
+  animation: foot2 1s infinite linear, foot1 1s infinite linear;
+}
+
+.run{
+  animation-play-state:running;
+}
+.stop{
+  animation-play-state:paused;
 }
