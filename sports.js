@@ -16,7 +16,6 @@ export default  class Sports extends React.Component {
       };
   }
   componentDidMount() {
-
   }
   down(e){
     e.stopPropagation()
@@ -40,7 +39,6 @@ export default  class Sports extends React.Component {
       <img className={'sp3 stop'} src={sp3} />
       <img className={'sp4 stop'} onClick={this.stopPropagation.bind(this)} onTouchStart={this.down.bind(this)}  onTouchEnd={this.up.bind(this)} onTouchMove={this.up.bind(this)} src={sp4} />
       <img className={'sp5 stop'} onClick={this.stopPropagation.bind(this)} onTouchStart={this.down.bind(this)} onTouchEnd={this.up.bind(this)} onTouchMove={this.up.bind(this)} src={sp4} />
-
       </div>
     );
   }

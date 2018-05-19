@@ -17,6 +17,7 @@ import b12 from './img/12.png'
 import Lamp from './lamp.js'
 import Music from './music.js'
 import Sports from './sports.js'
+import Time from './time.js'
 
 class Example extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ class Example extends React.Component {
         y:null,
         lamp: false,
         music: false,
-        sports: false
+        sports: false,
+        time: false,
+        eat: false
       };
   }
   componentDidMount() {
@@ -64,11 +67,16 @@ class Example extends React.Component {
   sports(){
     this.setState({sports: true})
   }
+  time(){
+    this.setState({time: true})
+  }
   back(e){
     this.setState({
       lamp: false,
       music: false,
-      sports: false
+      sports: false,
+      time: false,
+      eat: false
     })
     e.stopPropagation()
 
@@ -76,7 +84,7 @@ class Example extends React.Component {
   }
 
   render() {
-    const {top, lamp, music, sports} = this.state;
+    const {top, lamp, music, sports, time, eat} = this.state;
     return (
       <div className={'warp'} onTouchStart={this.touchstart.bind(this)}  onTouchMove={this.touchmove.bind(this)} onClick={()=>this.setState({
         lamp: false
@@ -89,7 +97,7 @@ class Example extends React.Component {
        <img className={'b4'} onClick={this.sports.bind(this)} src={b4}/>
        <img className={'b5'} src={b5}/>
        <img className={'b6'} src={b6}/>
-       <img className={'b7'} src={b7}/>
+       <img className={'b7'} onClick={this.time.bind(this)} src={b7}/>
        <img className={'b8'} onClick={this.music.bind(this)} src={b8}/>
        <img className={'b9'} src={b9}/>
        <img className={'b10'} src={b10}/>
@@ -99,6 +107,7 @@ class Example extends React.Component {
       {lamp ? <Lamp  onClick={this.back.bind(this)}  /> : ''}
       {music ? <Music  onClick={this.back.bind(this)} /> : ''}
       {sports ? <Sports onClick={this.back.bind(this)}  /> : ''}
+      {time ? <Time onClick={this.back.bind(this)}  /> : ''}
       </div>
     );
   }

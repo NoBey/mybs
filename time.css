@@ -1,0 +1,62 @@
+@keyframes zhuan
+{
+0% {
+  transform: rotate(0deg);
+}
+
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes moom
+{
+0% {
+  transform: rotate(7deg);
+}
+50% {
+  transform: rotate(-7deg);
+}
+100% {
+  transform: rotate(7deg);
+}
+}
+
+@keyframes moominit
+{
+0% {
+  top:120vh;
+}
+
+100% {
+  top: 10vh
+}
+}
+.timewarp{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.moom{
+  /* animation: moom 2s infinite; */
+  width: 30vw;
+  animation: moominit 2s, moom 1s infinite;;
+  position: absolute;
+  top:10vh;
+z-index: 100;
+}
+
+.sum{
+  width: 35vw;
+  position: absolute;
+  top:100vh;
+  z-index: 100;
+  animation: zhuan 2s infinite linear;
+
+}

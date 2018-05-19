@@ -1,0 +1,50 @@
+@keyframes lamp
+{
+0% {
+  transform: rotate(7deg);
+  transform-origin: 50% 0
+}
+50% {
+  transform: rotate(-7deg);
+  transform-origin: 50% 0
+}
+100% {
+  transform: rotate(7deg);
+  transform-origin: 50% 0
+}
+}
+@keyframes xian
+{
+0% {
+  top: -5vh;
+}
+50% {
+  top: -2vh;
+}
+100% {
+  top: -5vh;
+}
+}
+
+
+.lampwarp{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+
+.lamp{
+  animation: lamp 2s infinite;
+}
+.xian{
+  position: absolute;
+  top: -80vw;
+  right: 10vw;
+  z-index: 100;
+  width: 8vw;
+  animation: xian 4s infinite;
+}
