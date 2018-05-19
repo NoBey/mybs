@@ -1,0 +1,83 @@
+@keyframes music3
+{
+0% {
+  transform: rotate(7deg);
+  transform-origin: 50% 0
+}
+50% {
+  transform: rotate(-7deg);
+  transform-origin: 50% 0
+}
+100% {
+  transform: rotate(7deg);
+  transform-origin: 50% 0
+}
+}
+
+@keyframes mm
+{
+0% {
+  transform: rotate(30deg);
+  top: 70vh;
+  left: 55vw;
+
+}
+25% {
+  transform: rotate(0deg);
+  top: 60vh;
+  left: 65vw;
+
+}
+50% {
+  transform: rotate(-30deg);
+  top: 30vh;
+  left: 75vw;
+}
+100% {
+  transform: rotate(30deg);
+  top: 0vh;
+  left: 55vw;
+
+}
+}
+
+
+.musicwarp{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.music1{
+  width: 40vw;
+  position: absolute;
+  top: 60vh;
+}
+.music2{
+  width: 24vw;
+  position: absolute;
+  top: 62vh;
+  left: 34vw;
+}
+.music3{
+  width: 16vw;
+  position: absolute;
+  top: 63vh;
+  left: 49.5vw;
+  animation: music3 1s infinite;
+}
+.mm{
+  width: 6vw;
+  position: absolute;
+  top: 70vh;
+  left: 55vw;
+  animation: mm 5s infinite;
+}
