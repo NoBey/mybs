@@ -23,9 +23,9 @@ export default  class Lamp extends React.Component {
     const ok = this.state.ok
     return (
       <div className={'lampwarp'} {...this.props} >
-      {
-        ok ? <img className={'lamp'} style={{width: '100vw'}} src={lamp} /> : <img className={'lamp '} style={{width: '24vw',position:'absolute',marginLeft: '38vw'}} src={lamp2} />
-      }
+      <div className={'lamp'}>
+      <img  style={ok ? {width: '100vw', animation: 'lamp 2s infinite' } : {width: '24vw',position:'absolute',marginLeft: '38vw', animation: 'lamp 2s infinite'}} src={ok ? lamp : lamp2} />
+      </div>
       <img className={'down xian'} src={xian} onClick={(e) => {
         e.stopPropagation()
         this.setState({ok: !ok})
