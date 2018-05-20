@@ -1,0 +1,73 @@
+@keyframes love {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+
+@keyframes lovel {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: 50% 100%;
+      margin-top: 0;
+
+    }
+    100% {
+      transform: rotate(-90deg);
+      transform-origin: 50% 100%;
+      margin-top: 120vh;
+
+    }
+}
+@keyframes lover {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: 50% 100%;
+      margin-top: 0;
+
+
+    }
+    100% {
+      transform: rotate(90deg);
+      transform-origin: 50% 100%;
+      margin-top: 120vh;
+
+    }
+}
+
+
+.lovewarp {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.love{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  animation: love 1.2s infinite;
+  position: absolute;
+  top:100vh;
+}
+.love img{
+  position: absolute;
+
+}
+.lovel{
+  animation: lovel 3s ;
+
+}
+.lover{
+  animation: lover 3s ;
+}
+
+.lamp {
+    animation: lamp 2s infinite;
+}

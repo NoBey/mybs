@@ -19,6 +19,7 @@ import Music from './music.js'
 import Sports from './sports.js'
 import Time from './time.js'
 import Eat from './eat.js'
+import Love from './love.js'
 
 class Example extends React.Component {
   constructor(props) {
@@ -30,16 +31,20 @@ class Example extends React.Component {
         music: false,
         sports: false,
         time: false,
-        eat: false
+        eat: false,
+        love: false,
       };
   }
   componentDidMount() {
     $('.brain img').click(function(){
-      $(this).toggleClass('bdown') //.delay(1000).toggleClass('bdown')
+
+      $(this).css({animation:''}).toggleClass('bdown') //.delay(1000).toggleClass('bdown')
       setTimeout( ()=> {
         $(this).toggleClass('bdown')
       }, 400);
     })
+    $('.brain img').css({animation: 'inittap 2s'})
+
     let time = 100
       // $('.brain img').each(function(){
       //   time = time +500
@@ -74,13 +79,17 @@ class Example extends React.Component {
   eat(){
     this.setState({eat: true})
   }
+  love(){
+    this.setState({love: true})
+  }
   back(e){
     this.setState({
       lamp: false,
       music: false,
       sports: false,
       time: false,
-      eat: false
+      eat: false,
+      love: false
     })
     e.stopPropagation()
 
@@ -88,18 +97,23 @@ class Example extends React.Component {
   }
 
   render() {
-    const {top, lamp, music, sports, time, eat} = this.state;
+    const {top, lamp, music, sports, time, eat, love} = this.state;
+    let opacity = 1
+    if(lamp || music || sports || time || eat || love){
+      opacity = 0.5
+    }
+
     return (
       <div className={'warp'} onTouchStart={this.touchstart.bind(this)}  onTouchMove={this.touchmove.bind(this)} onClick={()=>this.setState({
         lamp: false
       })}>
        <div className={'bg'} />
-      <div className={'brain'} style={{top}} onClick={(e) => e.stopPropagation()} >
+      <div className={'brain'} style={{top, opacity}} onClick={(e) => e.stopPropagation()} >
        <img className={'b1'}  src={b1}/>
        <img className={'b2'} src={b2}/>
        <img className={'b3'} onClick={this.lamp.bind(this)} src={b3}/>
        <img className={'b4'} onClick={this.sports.bind(this)} src={b4}/>
-       <img className={'b5'} src={b5}/>
+       <img className={'b5'} onClick={this.love.bind(this)} src={b5}/>
        <img className={'b6'} src={b6}/>
        <img className={'b7'} onClick={this.time.bind(this)} src={b7}/>
        <img className={'b8'} onClick={this.music.bind(this)} src={b8}/>
@@ -113,6 +127,7 @@ class Example extends React.Component {
       {sports ? <Sports onClick={this.back.bind(this)}  /> : ''}
       {time ? <Time onClick={this.back.bind(this)}  /> : ''}
       {eat ? <Eat onClick={this.back.bind(this)}  /> : ''}
+      {love ? <Love onClick={this.back.bind(this)}  /> : ''}
       </div>
     );
   }

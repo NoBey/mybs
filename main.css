@@ -1,3 +1,9 @@
+@keyframes inittap
+{
+0% {transform: scale(3);}
+/* 50% {transform: scale(3);} */
+100% {transform: scale(1);}
+}
 @keyframes tap
 {
 0% {transform: scale(1);}
@@ -61,11 +67,10 @@ body{
   position: absolute;
   /* transform: scale(0.5); */
 
-  /* animation:tap 1s  infinite; */
 }
 
 .bdown{
-  animation:tap 0.4s  infinite;
+  animation:tap 0.4s  infinite !important;
 }
 .bformto{
   animation: formto 5s infinite;
