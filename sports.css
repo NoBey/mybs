@@ -11,6 +11,19 @@
 }
 }
 
+@keyframes sp1
+{
+0% {
+  transform: rotate(90deg);
+  transform-origin: 10% 0
+}
+
+100% {
+  transform: rotate(0deg);
+  transform-origin: 10% 0
+}
+}
+
 @keyframes foot1
 {
 0% {
@@ -67,7 +80,8 @@
   width: 80vw;
   position: absolute;
   top: 80vw;
-  left: 0
+  left: 0;
+  animation: sp1 1s ;
 }
 .sp2{
   width: 15vw;
@@ -87,18 +101,25 @@
 
 .sp4{
   width: 16vw;
+  height: 10vw;
   position: absolute;
   top: 120vw;
   left: 60vw;
   animation:foot1 1s infinite linear,foot2 1s infinite linear;
+  background: url(./img/sports/4.png);
+  background-size: 100% 100%;
 
 }
 .sp5{
   width: 16vw;
+  height: 10vw;
   position: absolute;
   top: 122vw;
   left: 38vw;
   animation:foot2 1s infinite linear, foot1 1s infinite linear;
+  background: url(./img/sports/4.png);
+  background-size: 100% 100%;
+
 }
 
 .run{
