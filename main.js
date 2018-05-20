@@ -18,6 +18,7 @@ import Lamp from './lamp.js'
 import Music from './music.js'
 import Sports from './sports.js'
 import Time from './time.js'
+import Eat from './eat.js'
 
 class Example extends React.Component {
   constructor(props) {
@@ -70,6 +71,9 @@ class Example extends React.Component {
   time(){
     this.setState({time: true})
   }
+  eat(){
+    this.setState({eat: true})
+  }
   back(e){
     this.setState({
       lamp: false,
@@ -99,7 +103,7 @@ class Example extends React.Component {
        <img className={'b6'} src={b6}/>
        <img className={'b7'} onClick={this.time.bind(this)} src={b7}/>
        <img className={'b8'} onClick={this.music.bind(this)} src={b8}/>
-       <img className={'b9'} src={b9}/>
+       <img className={'b9'} onClick={this.eat.bind(this)} src={b9}/>
        <img className={'b10'} src={b10}/>
        <img className={'b11'} src={b11}/>
        <img className={'b12'} src={b12}/>
@@ -108,6 +112,7 @@ class Example extends React.Component {
       {music ? <Music  onClick={this.back.bind(this)} /> : ''}
       {sports ? <Sports onClick={this.back.bind(this)}  /> : ''}
       {time ? <Time onClick={this.back.bind(this)}  /> : ''}
+      {eat ? <Eat onClick={this.back.bind(this)}  /> : ''}
       </div>
     );
   }

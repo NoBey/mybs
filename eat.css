@@ -1,50 +1,72 @@
-@keyframes lamp
-{
-0% {
-  transform: rotate(7deg);
-  transform-origin: 50% 0
-}
-50% {
-  transform: rotate(-7deg);
-  transform-origin: 50% 0
-}
-100% {
-  transform: rotate(7deg);
-  transform-origin: 50% 0
-}
-}
-@keyframes xian
-{
-0% {
-  top: -5vh;
-}
-50% {
-  top: -2vh;
-}
-100% {
-  top: -5vh;
-}
+@keyframes lamp {
+    0% {
+        transform: rotate(7deg);
+        transform-origin: 50% 0
+    }
+    50% {
+        transform: rotate(-7deg);
+        transform-origin: 50% 0
+    }
+    100% {
+        transform: rotate(7deg);
+        transform-origin: 50% 0
+    }
 }
 
+@keyframes food {
+    0% {
+        top: 120vh;
 
-.lampwarp{
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+    }
+    /* 50% {
+        top: -2vh;
+    } */
+    100% {
+        top: 10vw;
+    }
 }
 
-
-.lamp{
-  animation: lamp 2s infinite;
+@keyframes food2 {
+    0% {
+      transform:scale(0.85);
+    }
+    50% {
+      transform:scale(1.15);
+    }
+    100% {
+      transform:scale(0.85);
+    }
 }
-.xian{
-  position: absolute;
-  top: -80vw;
-  right: 10vw;
-  z-index: 100;
-  width: 8vw;
-  animation: xian 4s infinite;
+
+.eatwarp {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.food {
+    background: url(./img/eat/0.png);
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    top: 10vw;
+    z-index: 100;
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: food 2s, food2 2s infinite;
+}
+.fooditem{
+  width: 60%;
+  height: 60%;
+  filter:grayscale(100%)
+}
+
+.lamp {
+    animation: lamp 2s infinite;
 }
