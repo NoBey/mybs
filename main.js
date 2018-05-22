@@ -20,6 +20,7 @@ import Sports from './sports.js'
 import Time from './time.js'
 import Eat from './eat.js'
 import Love from './love.js'
+import Money,{ Coin } from './money.js'
 
 class Example extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Example extends React.Component {
       };
   }
   componentDidMount() {
+    Money()
     $('.brain img').click(function(){
 
       $(this).css({animation:''}).toggleClass('bdown') //.delay(1000).toggleClass('bdown')
@@ -82,6 +84,9 @@ class Example extends React.Component {
   love(){
     this.setState({love: true})
   }
+  money(){
+    let coin = new Coin()
+  }
   back(e){
     this.setState({
       lamp: false,
@@ -118,8 +123,8 @@ class Example extends React.Component {
        <img className={'b7'} onClick={this.time.bind(this)} src={b7}/>
        <img className={'b8'} onClick={this.music.bind(this)} src={b8}/>
        <img className={'b9'} onClick={this.eat.bind(this)} src={b9}/>
-       <img className={'b10'} src={b10}/>
-       <img className={'b11'} src={b11}/>
+       <img className={'b10'} src={b10} />
+       <img className={'b11'} onClick={this.money.bind(this)} src={b11}/>
        <img className={'b12'} src={b12}/>
       </div>
       {lamp ? <Lamp  onClick={this.back.bind(this)}  /> : ''}
